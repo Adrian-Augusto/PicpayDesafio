@@ -2,15 +2,16 @@ package Picpay.Desafio.Domain;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.usertype.UserType;
 
-import java.lang.reflect.Type;
+import java.math.BigDecimal;
 
 @Data
 @Entity
 @Table(name = "Users")
-public class UserEntity {
+public class Users {
 
-    @id
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String firstname;
@@ -20,6 +21,8 @@ public class UserEntity {
     @Column(unique = true)
     private String email;
     private  String password;
+    private UserType userType;
+    public BigDecimal value;
 
 
 
